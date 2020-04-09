@@ -1,0 +1,46 @@
+---
+title: "Characterization of the Atlantic Chub Mackerel fishery and stock"
+author: "Robert Leaf"
+date: "April 8, 2020"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+urlcolor: blue
+---
+
+## Introduction
+
+We continue to work with industry partners (J. Kaelin, Lund’s Fisheries and M. Lapp, SeaFreeze Ltd.) to
+characterize the age and length composition of Atlantic Chub Mackerel(ACM) in the commercial fishery. This effort was intitiated in 2016 using funding provided by the [Science Center for Marine Fisheries](www.scemfis.org/). SCeMFiS is a National Science Foundation Industry/University Cooperative Research Center (I/UCRC).
+
+The goal of this work has been to understand inter- and intra-annual variations in age and length composition
+and we have integrated these data with those collected from previous fishery-dependent sampling work (earlier than 2016). The intention of this effort is to contribute to a continued understanding of the length and age-composition of harvest and serve to expand the time series of annual length composition.
+
+## Methods
+
+Working with industry partners, we have requested that both SeaFreeze and Lund’s Fisheries collect a random subset of the catch of ACM and keep them frozen at their facility, labeled with the date of collection. Depending on the volume of samples, we have made trips to Lund’s Fisheries in the late summer/early fall (2016, 2017, 2018) to collect and sample fish (determine length, weight, and collect otoliths) onsite. For those individuals harvested that are of extreme total length (< 25 cm and > 38 cm, TL) otoliths will be collected and fish will be aged. We focus on age determination of these sizes of fish because they are absent from our previous year’s sampling and these individuals were used to inform an length-at-age relationship. In other years, including in 2019, we have had samples shipped to the Gulf Coast Research Laboratory.
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+require(knitr)
+require(kableExtra)
+course.eval <- read.csv("summary.stats.csv")
+
+names(course.eval) <- c("Year",	"Minimum FL (cm)",	"Maximum FL (cm)", 
+                        "# Fish Measured", "# Determine Maturity", 
+                        "# Sex Deterimed", "# Age Determined")
+knitr::kable(course.eval) %>%
+  column_spec(1, bold = T, width = "5em") %>%
+  kable_styling(bootstrap_options = "striped", full_width = T, position = "center")
+```
+
+
+
+```{r, echo=FALSE}
+require(knitr)
+
+# ACM.dat <- read.csv("./output/summary.stats.csv")
+
+```
+
+
