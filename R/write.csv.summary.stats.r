@@ -30,6 +30,7 @@ ACM.dat <- ACM.dat %>% mutate(est.age = ifelse(est.age < 0, 0, est.age))
 ACM.dat <- ACM.dat[complete.cases(ACM.dat$est.age),]
 ACM.dat <- ACM.dat %>% dplyr::filter(est.age <= 6)
 ACM.dat <- ACM.dat[complete.cases(ACM.dat$Capture_Year),]
+ACM.dat <- ACM.dat %>% dplyr::filter(FL > 18)
 
 ACM.summary <- ACM.dat %>% group_by(Capture_Year) %>% summarise(min.FL = round(min(FL, na.rm = T),1),
                                                                 max.FL = round(max(FL, na.rm = T),1),
